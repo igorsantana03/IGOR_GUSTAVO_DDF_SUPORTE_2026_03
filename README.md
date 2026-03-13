@@ -1,5 +1,3 @@
-# Case Técnico: Analista de Suporte - Dadosfera
-
 IGOR_SANTANA_DDF_SUPORTE_2026_03
 │
 ├── README.md
