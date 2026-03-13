@@ -1,81 +1,334 @@
-IGOR_SANTANA_DDF_SUPORTE_2026_03
 
-# Diagnóstico de Conectividade e Banco de Dados
+#  Estrutura do repositório
 
-Este repositório apresenta testes básicos de diagnóstico de rede e validação de acesso a banco de dados.
+No GitHub seu repositório deve ficar assim:
 
-Foram utilizados os seguintes comandos:
+``
+igor_santana_DDF_SUPORTE_2026_03
 
-- ping
-- tracert
-- nslookup
+README.md
+prints/
+    ping.png
+    tracert.png
+    nslookup.png
+    banco.png
+    vpn.png
+    pipeline.png
+``
 
-Também foi realizada uma consulta SQL no banco PostgreSQL utilizando o pgAdmin4 para validar o acesso aos dados.
+---
 
-│
+# README COMPLETO DO CASE
 
-├── README.md
+Copie tudo abaixo para o seu `README.md`.
 
-│
+---
 
-├── step1_troubleshooting
+# Desafio Técnico – Dadosfera Suporte
 
-│   └── resposta_cliente.md
+## Candidato
 
-│
+Igor Gustavo Santana
 
-├── step2_database
+## Repositório
 
-│   ├── instalacao.md
+Desafio técnico para vaga de suporte da plataforma Dadosfera.
 
-│   ├── scripts.sql
+---
 
-│
+# Step 1 – Troubleshooting
 
-├── step3_vpn
+### Chamado do cliente
 
-│   └── configuracao_vpn.md
+Cliente relatou erro durante a importação de dados de uma planilha do Google Sheets para a plataforma.
 
-│
+### Diagnóstico
 
-├── step4_conexao_dadosfera
+Ao analisar o pipeline de coleta foi identificado que o erro pode ocorrer por:
 
-│   └── pipeline.md
+* Permissão incorreta da planilha
+* Tipos de dados inconsistentes
+* Linhas vazias ou cabeçalhos duplicados
+* Limite de requisições da API do Google
 
-│
+### Sugestão de correção no Dataset
 
-├── step5_catalogo
+Alterar a configuração do dataset para:
 
-│   └── catalogo.md
+* Garantir que a planilha esteja com acesso **compartilhado ou público**
+* Garantir que a **primeira linha contenha apenas os nomes das colunas**
+* Remover linhas vazias
+* Padronizar tipos de dados (ex: texto ou número)
 
-│
+### Boas práticas ao carregar Google Sheets
 
-├── step6_sql
+1. Validar estrutura da planilha
+2. Evitar células mescladas
+3. Garantir que os dados estejam normalizados
+4. Monitorar logs do pipeline
 
-│   ├── queries.sql
+### Coleta de logs
 
-│   └── resultado_queries.md
+Os logs podem ser obtidos pelo painel da plataforma seguindo a documentação oficial da Dadosfera.
 
-│
+---
 
-├── step7_suporte
+# Step 2 – Criação de Banco de Dados
 
-│   ├── workstation_setup.md
+Foi criada uma máquina virtual Linux para hospedar o banco de dados.
 
-│   └── diagnostico_rede.md
+Sistema operacional utilizado:
 
-├── Prints
+Ubuntu 22.04
 
-│   └── imagem_ping.png
+Banco instalado:
 
-│   └── Imagem_banco_de_dados.png
+PostgreSQL
 
-│   └── Imagem_nslookup.png
+### Criação do banco
 
-│   └── imagem_tracert.png
+```sql
+CREATE DATABASE igor_suporte;
+```
 
-│
+### Criação da tabela
 
-└── bonus
-    ├── sso_migracao.md
-    └── chatbot_fluxo.md
+Utilizando os dados da tabela fornecida pela empresa.
+
+```sql
+CREATE TABLE TB_igor_suporte (
+id INT,
+nome VARCHAR(100),
+email VARCHAR(100),
+telefone VARCHAR(20)
+);
+```
+
+### Inserção de dados
+
+```sql
+INSERT INTO TB_igor_suporte VALUES
+(1,'Ana','ana@email.com','119999999'),
+(2,'Carlos','carlos@email.com','119888888');
+```
+
+---
+
+# Step 3 – Configuração da VPN
+
+Para permitir comunicação segura foi utilizada a VPN.
+
+Ferramenta utilizada:
+
+OpenVPN
+
+### Instalação
+
+```bash
+sudo apt update
+sudo apt install openvpn
+```
+
+### Conexão
+
+```bash
+sudo openvpn --config cliente.ovpn
+```
+
+Após a conexão foi possível acessar a rede privada da plataforma.
+
+---
+
+# Step 4 – Conexão com a Dadosfera
+
+Com a VPN ativa foi criada uma conexão entre o banco de dados e a plataforma.
+
+Etapas realizadas:
+
+1. Acesso ao painel de fontes de dados
+2. Cadastro da fonte PostgreSQL
+3. Inserção das credenciais do banco
+4. Teste de conexão
+
+Após validação foi criada uma **pipeline de ingestão de dados** consumindo a tabela:
+
+```
+TB_igor_suporte
+```
+
+---
+
+# Step 5 – Catálogo de Dados
+
+A tabela foi publicada no catálogo da plataforma.
+
+Nome amigável
+
+Tabela de clientes de suporte
+
+Descrição
+
+Tabela fictícia utilizada para demonstrar ingestão de dados e consultas analíticas na plataforma Dadosfera.
+
+---
+
+# Step 6 – Consultas SQL
+
+Consulta realizada para análise descritiva.
+
+`sql
+SELECT
+COUNT(*) as total_registros
+FROM TB_igor_suporte;
+``
+
+Resultado
+
+Quantidade total de registros inseridos na tabela.
+
+Outra consulta utilizada:
+
+`sql
+SELECT
+nome,
+email
+FROM TB_igor_suporte;
+``
+
+Essas consultas foram executadas no módulo de visualização da plataforma.
+
+---
+
+# Step 7 – Suporte híbrido / presencial
+
+## Setup inicial da estação
+
+Sistema operacional recomendado
+
+Linux Ubuntu ou Windows 11.
+
+Ferramentas necessárias
+
+* Python
+* Cliente SQL
+* OpenVPN
+* Utilitários de rede
+
+### Checklist de validação
+
+Verificar conectividade
+
+``
+ping servidor
+```
+
+Verificar rota de rede
+
+```
+tracert servidor
+```
+
+Verificar DNS
+
+```
+nslookup servidor
+```
+
+Testar portas
+
+```
+telnet host porta
+```
+
+--
+
+## Diagnóstico de performance
+
+Para investigar lentidão em consultas são avaliados:
+
+### Banda de rede
+
+Verificar velocidade da conexão.
+
+### Latência
+
+Comando:
+
+``
+ping
+`
+
+### Rota
+
+Comando:
+
+`
+tracert
+`
+
+### DNS
+
+Comando:
+
+`
+nslookup
+``
+
+### Possíveis gargalos
+
+* Switch
+* Firewall
+* Proxy
+* Roteador
+
+### Plano de ação
+
+1. Identificar sintomas
+2. Coletar logs
+3. Executar testes de rede
+4. Validar latência
+5. Verificar gargalos
+6. Propor solução
+
+---
+
+# Evidências
+
+## Teste de Ping
+
+![Ping](prints_ping.png)
+
+---
+
+## Teste de Tracert
+
+![Tracert](prints_tracert.png)
+
+---
+
+## Teste de Nslookup
+
+![Nslookup](prints_nslookup.png)
+
+---
+
+# Vídeo de demonstração
+
+Link do vídeo demonstrando a execução do ambiente e troubleshooting:
+
+(Adicionar link do vídeo aqui)
+
+--
+
+# BONUS – Boas práticas de suporte
+
+Uma integração com um chatbot baseado em IA poderia melhorar o atendimento ao cliente.
+
+Exemplo de fluxo
+
+Usuário → Chatbot → Base de conhecimento → Suporte humano.
+
+Ferramentas como ChatGPT podem auxiliar na triagem inicial de chamados.
+
+-
+
