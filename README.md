@@ -58,6 +58,8 @@ IGOR_SANTANA_DDF_SUPORTE_2026_03
 
 │   └── Imagem_nslookup.png
 
+│   └── imagem_tracert.png
+
 │
 
 └── bonus
