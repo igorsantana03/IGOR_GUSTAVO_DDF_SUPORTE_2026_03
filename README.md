@@ -1,8 +1,5 @@
 
 #  Estrutura do repositório
-
-No GitHub seu repositório deve ficar assim:
-
 ``
 igor_santana_DDF_SUPORTE_2026_03
 
