@@ -317,7 +317,6 @@ Exemplo de fluxo
 
 Usuário → Chatbot → Base de conhecimento → Suporte humano.
 
-Ferramentas como ChatGPT podem auxiliar na triagem inicial de chamados.
 
 -
 
