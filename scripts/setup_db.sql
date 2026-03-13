@@ -1,31 +1,44 @@
--- Script de configuração de Banco de Dados para o Case Dadosfera
--- Candidato: Igor Gustavo Santana
+# Case Técnico – Analista de Suporte Dadosfera
 
--- 1. Criação do Banco de Dados
-CREATE DATABASE igor_gustavo_vaga;
+Candidato: Igor Santana  
+Data: Março 2026  
 
--- 2. Conexão ao banco
-\c igor_gustavo_vaga;
+## Objetivo
 
--- 3. Criação da Tabela principal de suporte
-CREATE TABLE TB_igor_gustavo_vaga (
-    id SERIAL PRIMARY KEY,
-    nome_cliente VARCHAR(100) NOT NULL,
-    data_atendimento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    categoria_problema VARCHAR(50),
-    status_chamado VARCHAR(20) CHECK (status_chamado IN ('Aberto', 'Em Análise', 'Resolvido')),
-    prioridade INTEGER CHECK (prioridade BETWEEN 1 AND 5),
-    descricao_erro TEXT
-);
+Este repositório apresenta a resolução do case técnico proposto pela Dadosfera para a posição de Analista de Suporte.
 
--- 4. Inserção de dados para teste (Step 2)
-INSERT INTO TB_igor_gustavo_vaga (nome_cliente, categoria_problema, status_chamado, prioridade, descricao_erro)
-VALUES 
-('Empresa Alpha', 'Conexão API', 'Resolvido', 1, 'Erro de autenticação no endpoint /v1/data'),
-('Logística Beta', 'Pipeline de Dados', 'Aberto', 2, 'Timeout durante a carga de arquivos CSV'),
-('Varejo Gamma', 'Visualização', 'Em Análise', 3, 'Gráfico de dispersão não carrega no módulo de BI');
+O objetivo do desafio foi demonstrar habilidades em:
 
--- 5. Query de exemplo (Step 6)
-SELECT categoria_problema, COUNT(*) as total_chamados 
-FROM TB_igor_gustavo_vaga 
-GROUP BY categoria_problema;
+- Configuração de ambiente Linux
+- Instalação e configuração de banco de dados
+- Conectividade via VPN
+- Integração com a plataforma Dadosfera
+- Troubleshooting de pipelines de dados
+- Consultas SQL e visualização de dados
+- Diagnóstico de problemas de rede
+
+---
+
+## Estrutura do projeto
+
+| Step | Descrição |
+|-----|------|
+| Step 1 | Troubleshooting de pipeline |
+| Step 2 | Criação de banco de dados |
+| Step 3 | Configuração VPN |
+| Step 4 | Conexão com Dadosfera |
+| Step 5 | Catálogo de dados |
+| Step 6 | Consultas SQL |
+| Step 7 | Setup da estação e diagnóstico de rede |
+| Bonus | Processos internos e chatbot |
+
+---
+
+## Tecnologias utilizadas
+
+- Linux (Ubuntu)
+- PostgreSQL
+- OpenVPN
+- SQL
+- Git / GitHub
+- Python
