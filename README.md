@@ -26,6 +26,6 @@ Configuração de um ambiente local para simular a origem dos dados de um client
 
 ---
 
-## 👤 Autor
+##  Autor
 **Igor Gustavo Santana**
 * Estudante de Ciência da Computação.
