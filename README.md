@@ -11,15 +11,6 @@ prints/
     banco.png
     vpn.png
     pipeline.png
-``
-
----
-
-# README COMPLETO DO CASE
-
-Copie tudo abaixo para o seu `README.md`.
-
----
 
 # Desafio Técnico – Dadosfera Suporte
 
@@ -28,10 +19,6 @@ Copie tudo abaixo para o seu `README.md`.
 Igor Gustavo Santana
 
 ## Repositório
-
-Desafio técnico para vaga de suporte da plataforma Dadosfera.
-
----
 
 # Step 1 – Troubleshooting
 
