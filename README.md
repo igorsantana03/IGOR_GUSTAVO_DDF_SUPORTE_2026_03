@@ -305,7 +305,7 @@ nslookup
 
 Link do vídeo demonstrando a execução do ambiente e troubleshooting:
 
-(Adicionar link do vídeo aqui)
+((https://drive.google.com/file/d/1YZ0VDNUkzx7X8CGUtYGhqva0mKtiS0wS/view?usp=drive_link))
 
 --
 
