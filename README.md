@@ -216,7 +216,7 @@ Ferramentas necessárias
 
 ### Checklist de validação
 
-Verificar conectividade
+# Step 8 - Verificar conectividade
 
 ``
 ping servidor
