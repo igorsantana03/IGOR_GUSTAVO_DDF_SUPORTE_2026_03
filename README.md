@@ -2,7 +2,7 @@
 
 Este repositório contém a resolução do desafio técnico para a vaga de Analista de Suporte v2.0 na Dadosfera. O projeto engloba troubleshooting de pipelines, configuração de infraestrutura em Linux, gerenciamento de banco de dados SQL e integração com a plataforma Dadosfera via VPN.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 * **OS:** Windows
 * **Banco de Dados:** PostgreSQL
 * **VPN:** OpenVPN
@@ -11,7 +11,7 @@ Este repositório contém a resolução do desafio técnico para a vaga de Anali
 
 ---
 
-## 📂 Estrutura do Desafio
+##  Estrutura do Desafio
 
 ### Step 1 - Troubleshooting
 Simulação de atendimento ao cliente sobre falha na importação de dados via Google Sheets. 
