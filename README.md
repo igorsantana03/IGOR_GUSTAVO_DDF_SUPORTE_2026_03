@@ -296,21 +296,26 @@ nslookup
 
 ## Teste de Ping
 
-![Ping](prints_ping.png)
+![Ping](Imagem_ping.png)
 
 ---
 
 ## Teste de Tracert
 
-![Tracert](prints_tracert.png)
+![Tracert](Imagem_tracert.png)
 
 ---
 
 ## Teste de Nslookup
 
-![Nslookup](prints_nslookup.png)
+![Nslookup](Imagem_nslookup.png)
 
 ---
+
+## Teste banco de dados
+![Teste1] (imagem_banco_de_dados1.png)
+![Teste2] (imagem_banco_de_dados2.png)
+![Teste3] (imagem_banco_de_dados3.png)
 
 # Vídeo de demonstração
 
