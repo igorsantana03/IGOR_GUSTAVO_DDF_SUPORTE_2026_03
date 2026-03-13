@@ -64,6 +64,8 @@ Também foi realizada uma consulta SQL no banco PostgreSQL utilizando o pgAdmin4
 
 │   └── diagnostico_rede.md
 
+├── Prints
+
 │   └── imagem_ping.png
 
 │   └── Imagem_banco_de_dados.png
