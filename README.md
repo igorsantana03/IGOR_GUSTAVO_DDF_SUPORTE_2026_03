@@ -1,5 +1,17 @@
 IGOR_SANTANA_DDF_SUPORTE_2026_03
 
+# Diagnóstico de Conectividade e Banco de Dados
+
+Este repositório apresenta testes básicos de diagnóstico de rede e validação de acesso a banco de dados.
+
+Foram utilizados os seguintes comandos:
+
+- ping
+- tracert
+- nslookup
+
+Também foi realizada uma consulta SQL no banco PostgreSQL utilizando o pgAdmin4 para validar o acesso aos dados.
+
 │
 
 ├── README.md
