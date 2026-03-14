@@ -1,14 +1,14 @@
-#!/bin/bash
-# Script de VPN – Simulação
-echo "Atualizando pacotes..."
-sudo apt update -y
+# VPN OpenVPN – Dadosfera
 
-echo "Instalando OpenVPN..."
-sudo apt install openvpn -y
+## Objetivo
+Configurar VPN para acessar rede privada do cliente e integrar com Dadosfera.
 
-echo "Simulando conexão VPN..."
-echo "Initialization Sequence Completed" > ~/vpn_files/logs_vpn.txt
-echo "VPN conectada com sucesso (simulação)." >> ~/vpn_files/logs_vpn.txt
+## Passos
+1. Colocar arquivo .ovpn na VM.
+2. Executar script `config_vpn.sh` com sudo.
+3. Validar conexão usando ping, telnet, traceroute e nslookup.
+4. Salvar logs em `docs/logs_vpn.txt`.
 
-# Mostrar logs no terminal
-cat ~/vpn_files/logs_vpn.txt
+## Observações
+- Permissões corretas do arquivo .ovpn são essenciais.
+- Testar conectividade antes de criar pipelines na Dadosfera.
