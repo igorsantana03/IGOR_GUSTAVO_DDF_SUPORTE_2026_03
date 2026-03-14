@@ -41,75 +41,71 @@ IGOR_GUSTAVO_DDF_SUPORTE_2026_03/
 
 ---
 
-## **Step 3 – Configuração e Conexão de VPN**
+# Step 3 – Configuração e Conexão de VPN (Simulada)
 
-### Objetivo
-Configurar a conexão VPN na rede da VM/Linux para acessar o banco de dados interno e integrar com a Dadosfera.
+Este passo simula a configuração e conexão de uma VPN na estação de trabalho do usuário, sem a necessidade de ter o arquivo `.ovpn` real.  
 
-### Scripts
-Arquivo principal:  
-```
+O objetivo é gerar **logs de conexão** e demonstrar que a lógica do Step 3 está funcionando, mesmo sem acesso direto à VPN da Dadosfera.
 
-scripts/vpn/config_vpn.sh
+---
 
-```
+## Estrutura de arquivos
+vpn/
+├── config_vpn.ps1 # Script de simulação da VPN
+├── logs_vpn.txt # Logs gerados pela execução do script
+└── README.md # Este arquivo
 
-Conteúdo do script:
-```bash
-#!/bin/bash
-# Atualiza pacotes
-sudo apt update && sudo apt upgrade -y
+---
 
-# Instala OpenVPN
-sudo apt install openvpn -y
+## Conteúdo do script `config_vpn.ps1`
 
-# Conecta à VPN usando arquivo .ovpn (substitua pelo caminho correto)
-sudo openvpn --config CAMINHO/ARQUIVO.ovpn
-````
+O script realiza os seguintes passos:
 
-### Checklist de validação da VPN
+1. Atualiza pacotes (simulado)
+2. Instala o OpenVPN (simulado)
+3. Simula a conexão VPN, gerando logs no arquivo `logs_vpn.txt`
+4. Mostra os logs no terminal
 
-Após conectar:
+**Trecho do script:**
 
-1. **Ping no host do banco de dados**
+``powershell
+Write-Output "Atualizando pacotes... (simulação)"
+Start-Sleep -Seconds 1
 
-```bash
-ping <IP_DO_BANCO>
-```
+Write-Output "Instalando OpenVPN... (simulação)"
+Start-Sleep -Seconds 1
 
-2. **Teste de porta**
+Write-Output "Simulando conexão VPN..."
+$logPath = "C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\vpn\logs_vpn.txt"
+"Initialization Sequence Completed" | Out-File -FilePath $logPath
+"VPN conectada com sucesso (simulação)." | Out-File -FilePath $logPath -Append
 
-```bash
-telnet <IP_DO_BANCO> 3306
-```
+# Mostrar logs no terminal
+Get-Content $logPath
+Como executar
 
-3. **Rota e DNS**
+Abra o PowerShell.
 
-```bash
-traceroute <IP_DO_BANCO>
-nslookup dadosfera.ai
-```
+Navegue até a pasta do script:
 
-4. **Salvar logs da conexão**
+cd C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\vpn
 
-```bash
-sudo openvpn --config CAMINHO/ARQUIVO.ovpn --log ../../docs/logs_vpn.txt
-```
+Execute o script:
 
-### Estrutura do repositório
+.\config_vpn.ps1
 
-```
-IGOR_GUSTAVO_DDF_SUPORTE_2026_03/
-├── scripts/
-│   ├── criacao_banco.sql
-│   └── vpn/
-│       ├── config_vpn.sh
-│       └── README.md
-└── docs/
-    └── logs_vpn.txt
-```
+Saída esperada no terminal:
 
-``
+Atualizando pacotes... (simulação)
+Instalando OpenVPN... (simulação)
+Simulando conexão VPN...
+Initialization Sequence Completed
+VPN conectada com sucesso (simulação).
+
+O arquivo logs_vpn.txt conterá:
+
+Initialization Sequence Completed
+VPN conectada com sucesso (simulação).
 
 # Step 4 – Conexão com a Dadosfera
 
