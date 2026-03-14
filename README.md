@@ -180,32 +180,41 @@ Nome amigável: Tabela de Funcionários - Suporte
 Descrição: Tabela simulada contendo dados fictícios da equipe de suporte da Dadosfera.
 Status: Disponibilizada com sucesso no Catálogo (simulação).
 
-# Step 6 – Consultas SQL
+# Step 6 – Consultas SQL e Visualização (Simulado)
 
-Consulta realizada para análise descritiva.
+Este passo simula análises descritivas da tabela `TB_igor_santana`.
 
-`sql
-SELECT
-COUNT(*) as total_registros
-FROM TB_igor_suporte;
-``
+## Estrutura de arquivos
 
-Resultado
 
-Quantidade total de registros inseridos na tabela.
+consultas_sql/
+├── analise_suporte.sql # Queries SQL simuladas
+├── logs_consultas.ps1 # Script para gerar saída simulada
+└── logs_consultas.txt # Logs gerados (evidência)
 
-Outra consulta utilizada:
 
-`sql
-SELECT
-nome,
-email
-FROM TB_igor_suporte;
-``
+## Como executar
 
-Essas consultas foram executadas no módulo de visualização da plataforma.
+1. Abra o **PowerShell**.
+2. Navegue até a pasta `consultas_sql`:
 
----
+``powershell
+cd C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\consultas_sql
+
+Rode o script de logs:
+
+.\logs_consultas.ps1
+Saída esperada
+Query 1: Total de funcionários
+Total de funcionários: 2
+Query 2: Média de idade
+Média de idade: 27,5
+Query 3: Funcionários por departamento
+Suporte: 1
+TI: 1
+Query 4: Listagem completa da tabela
+1 | Ana    | 25 | Suporte
+2 | Carlos | 30 | TI
 
 # Step 7 – Suporte híbrido / presencial
 
