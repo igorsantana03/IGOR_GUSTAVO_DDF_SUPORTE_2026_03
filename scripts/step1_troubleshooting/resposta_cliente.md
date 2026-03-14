@@ -1,49 +1,21 @@
+Olá Ana,
 
-# Troubleshooting – Pipeline de Importação
+Recebemos seu chamado sobre erro na importação de dados no pipeline da Dadosfera. Identificamos que o problema está relacionado ao formato do Dataset carregado do Google Sheets.
 
-Olá,
+**Sugestão de alteração no Dataset:**
+- Remover células mescladas ou vazias.
+- Garantir consistência de tipos nas colunas (datas, números, textos).
+- Nomear colunas sem caracteres especiais (ex: 'nome_cliente', 'data_venda').
+- Evitar linhas/colunas em branco no início do arquivo.
 
-Recebemos o seu chamado relacionado ao erro no pipeline de ingestão de dados proveniente do Google Sheets.
+**Cuidados adicionais:**
+- Verificar permissões de leitura do Google Sheets.
+- Planilhas muito grandes devem ser divididas.
+- Atualizações frequentes: usar ingestão incremental.
+- Para logs: acessar pipeline > Logs > Download CSV (para analisar falhas).
 
-Após análise inicial, identificamos que o erro pode estar relacionado ao formato do dataset utilizado na importação.
+Se o erro persistir, envie o log da importação para análise detalhada.
 
-## Possíveis causas
-
-1. Colunas com nomes duplicados
-2. Linhas vazias dentro da tabela
-3. Tipos de dados inconsistentes
-4. Uso de fórmulas no Google Sheets
-5. Células mescladas
-
-## Sugestão de alteração no dataset
-
-Recomendamos que o dataset seja ajustado para garantir:
-
-- primeira linha contendo apenas nomes das colunas
-- dados tabulares sem células mescladas
-- tipos de dados consistentes por coluna
-- ausência de linhas vazias
-
-## Coleta de logs
-
-Para investigar o erro em mais detalhes, recomendamos baixar os logs do pipeline.
-
-Passos:
-
-1. Acessar o pipeline no painel da Dadosfera
-2. Clicar na aba "Logs"
-3. Baixar o log da execução com erro
-4. Analisar mensagens relacionadas a parsing ou schema
-
-## Boas práticas para ingestão de dados do Google Sheets
-
-- evitar células mescladas
-- evitar caracteres especiais nos nomes de colunas
-- manter dados tabulares
-- evitar fórmulas
-- garantir permissões de acesso ao documento
-
-Caso o erro persista, pedimos que envie os logs da execução para análise mais detalhada.
-
-Atenciosamente  
-Suporte Técnico Dadosfera
+Atenciosamente,  
+**Igor Gustavo**  
+Analista de Suporte – Dadosfera
