@@ -1,13 +1,4 @@
-# Catálogo de Dados
-
-Tabela: TB_igor_suporte
-
-## Nome amigável
-
-Cadastro de usuários - ambiente de suporte
-
-## Descrição
-
-Tabela criada para simular o processo de ingestão de dados de um banco PostgreSQL para a plataforma Dadosfera.
-
-Contém registros fictícios de usuários com informações básicas utilizadas para testes de pipeline e visualização de dados.
+Nome da tabela: TB_igor_santana
+Nome amigável: Tabela de Funcionários - Suporte
+Descrição: Tabela simulada contendo dados fictícios da equipe de suporte da Dadosfera.
+Status: Disponibilizada com sucesso no Catálogo (simulação).
