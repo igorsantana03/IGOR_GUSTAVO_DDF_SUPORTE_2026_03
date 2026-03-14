@@ -9,8 +9,7 @@ Linux Ubuntu 22.04 LTS
 Python 3.10  
 Git  
 OpenVPN  
-PostgreSQL Client  
-VSCode  
+Terminal
 
 ## Configuração inicial
 
