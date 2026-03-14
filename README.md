@@ -144,19 +144,41 @@ O arquivo logs_pipeline.txt conterá:
 Conexão com TB_igor_santana validada com sucesso
 Pipeline executada com sucesso.
 
-# Step 5 – Catálogo de Dados
+# Step 5 – Catálogo de Dados (Simulado)
 
-A tabela foi publicada no catálogo da plataforma.
+Este step simula a disponibilização da tabela `TB_igor_santana` no Catálogo da Dadosfera e a documentação da mesma.
 
-Nome amigável
+## Objetivos
 
-Tabela de clientes de suporte
+- Disponibilizar a tabela para consulta.
+- Documentar com:
+  - Nome amigável
+  - Descrição
 
-Descrição
+## Estrutura de arquivos
+catalogo/
+├── catalogo_tb.ps1 # Script de simulação
+├── logs_catalogo.txt # Logs gerados
+└── README.md # Explicação do Step 5
 
-Tabela fictícia utilizada para demonstrar ingestão de dados e consultas analíticas na plataforma Dadosfera.
 
----
+## Como executar
+
+1. Abra o **PowerShell**.
+2. Navegue até a pasta `catalogo`:
+
+``powershell
+cd C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\catalogo
+
+Execute o script:
+
+.\catalogo_tb.ps1
+Saída esperada
+Disponibilizando TB_igor_santana no Catálogo...
+Nome da tabela: TB_igor_santana
+Nome amigável: Tabela de Funcionários - Suporte
+Descrição: Tabela simulada contendo dados fictícios da equipe de suporte da Dadosfera.
+Status: Disponibilizada com sucesso no Catálogo (simulação).
 
 # Step 6 – Consultas SQL
 
