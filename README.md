@@ -107,24 +107,44 @@ O arquivo logs_vpn.txt conterá:
 Initialization Sequence Completed
 VPN conectada com sucesso (simulação).
 
-# Step 4 – Conexão com a Dadosfera
+# Step 4 – Conexão com a Dadosfera (Simulada)
 
-Com a VPN ativa foi criada uma conexão entre o banco de dados e a plataforma.
-
-Etapas realizadas:
-
-1. Acesso ao painel de fontes de dados
-2. Cadastro da fonte PostgreSQL
-3. Inserção das credenciais do banco
-4. Teste de conexão
-
-Após validação foi criada uma **pipeline de ingestão de dados** consumindo a tabela:
-
-```
-TB_igor_suporte
-```
+Este passo simula a conexão da tabela `TB_igor_santana` com a plataforma Dadosfera e a execução de uma pipeline, permitindo gerar evidências mesmo sem a VPN real.
 
 ---
+
+## Estrutura de arquivos
+
+
+---
+
+## Conteúdo do script `conexao_dadosfera.ps1`
+
+O script realiza os seguintes passos:
+
+1. Simula a conexão à tabela `TB_igor_santana`.
+2. Valida a “conexão” (simulada) com sucesso.
+3. Simula a execução da pipeline.
+4. Gera logs em `logs_pipeline.txt`.
+5. Mostra os logs no terminal.
+
+**Trecho do script:**
+
+``powershell
+Write-Output "Conectando à tabela TB_igor_santana..."
+Start-Sleep -Seconds 1
+
+$connectionStatus = "Conexão com TB_igor_santana validada com sucesso"
+Write-Output $connectionStatus
+
+Write-Output "Executando pipeline..."
+Start-Sleep -Seconds 1
+
+$logPath = "C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\pipeline\logs_pipeline.txt"
+$connectionStatus | Out-File -FilePath $logPath
+"Pipeline executada com sucesso" | Out-File -FilePath $logPath -Append
+
+Get-Content $logPath
 
 # Step 5 – Catálogo de Dados
 
