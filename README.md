@@ -57,46 +57,16 @@ Os logs podem ser obtidos pelo painel da plataforma seguindo a documentação of
 
 ---
 
-# Step 2 – Criação de Banco de Dados
+## Step 2 – Criação do Banco de Dados
 
-Foi criada uma máquina virtual Linux para hospedar o banco de dados.
+O banco de dados e a tabela fictícia foram criados no arquivo:
 
-Sistema operacional utilizado:
+`scripts/criacao_banco.sql`
 
-Ubuntu 22.04
-
-Banco instalado:
-
-PostgreSQL
-
-### Criação do banco
-
-```sql
-CREATE DATABASE igor_suporte;
-```
-
-### Criação da tabela
-
-Utilizando os dados da tabela fornecida pela empresa.
-
-```sql
-CREATE TABLE TB_igor_suporte (
-id INT,
-nome VARCHAR(100),
-email VARCHAR(100),
-telefone VARCHAR(20)
-);
-```
-
-### Inserção de dados
-
-```sql
-INSERT INTO TB_igor_suporte VALUES
-(1,'Ana','ana@email.com','119999999'),
-(2,'Carlos','carlos@email.com','119888888');
-```
-
----
+Este script cria:
+- Banco de dados: `igor_gustavo_vaga`
+- Tabela: `TB_igor_gustavo_vaga` com campos de cliente, produto, quantidade e valor total
+- Dados de teste inseridos para validação
 
 # Step 3 – Configuração da VPN
 
