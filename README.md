@@ -216,22 +216,70 @@ Query 4: Listagem completa da tabela
 1 | Ana    | 25 | Suporte
 2 | Carlos | 30 | TI
 
-# Step 7 – Suporte híbrido / presencial
+# Step 7 – Suporte Híbrido / Presencial (Simulado)
 
-## Setup inicial da estação
+Este step descreve como preparar a estação de trabalho (workstation) para operar com a Dadosfera e como realizar diagnósticos de performance de rede.
 
-Sistema operacional recomendado
+---
 
-Linux Ubuntu ou Windows 11.
+## Questão 1 – Setup inicial da estação
 
-Ferramentas necessárias
+**Objetivo:** Preparar o ambiente para conectar a Dadosfera.
 
-* Python
-* Cliente SQL
-* OpenVPN
-* Utilitários de rede
+### Passo a passo:
 
-### Checklist de validação
+1. **Sistema Operacional recomendado:**  
+   - Linux (Ubuntu 22.04) ou Windows 10/11 com WSL2.
+
+2. **Ferramentas essenciais:**
+   - Python 3.x
+   - Cliente SQL (MySQL Workbench, DBeaver)
+   - OpenVPN
+   - Utilitários de rede: `ping`, `tracert` (Windows), `traceroute` (Linux)
+
+3. **Permissões e rede:**
+   - Arquivos `.ovpn` para VPN
+   - Variáveis de ambiente e paths configurados
+   - Acesso à pasta de scripts e logs
+
+4. **Checklist de validação:**
+   - Conectividade VPN
+   - Ping e traceroute para host do banco
+   - Teste de portas (ex.: `telnet <host> 3306`)
+   - DNS funcionando
+   - MTU correto (`ping -f -l <tamanho> <host>`)
+   - Logs de autenticação da VPN
+
+---
+
+## Questão 2 – Diagnóstico de performance de rede
+
+**Objetivo:** Investigar lentidão em queries ou requisições.
+
+### Estratégia:
+
+1. **Coleta de dados de rede:**
+   - Testar banda e latência (`ping`, `iperf3`)
+   - Medir jitter e perda de pacotes
+   - Verificar DNS, rotas e MTU
+
+2. **Identificação de gargalos:**
+   - Switch ou roteador
+   - Proxy ou firewall
+   - VPN mal configurada
+
+3. **Plano de ação:**
+   - Formular hipóteses baseadas nos testes
+   - Ajustar configurações de rede, firewall, VPN
+   - Testar novamente
+   - Documentar evidências (logs, prints, outputs)
+
+---
+
+## Estrutura de arquivos sugerida para Step 7
+suporte/
+├── README.md # Explicação do setup e diagnóstico
+
 
 # Step 8 - Verificar conectividade
 
