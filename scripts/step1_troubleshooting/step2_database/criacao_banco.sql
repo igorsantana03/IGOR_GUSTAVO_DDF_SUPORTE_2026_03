@@ -1,6 +1,3 @@
--- Conectar no MySQL
--- sudo mysql -u root -p
-
 -- Criar banco
 CREATE DATABASE igor_gustavo_vaga;
 
