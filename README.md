@@ -1,97 +1,115 @@
+# IGOR_GUSTAVO_DDF_SUPORTE_2026_03
 
-#  Estrutura do repositório
+Repositório de entrega do Case Técnico – Analista de Suporte Dadosfera  
+Inclui Steps 2 e 3: criação de banco/tabela e configuração de VPN.
+
+---
+
+## **Step 2 – Criação do Banco de Dados**
+
+### Objetivo
+Criar uma base de dados relacional interna para testes e integração com a plataforma Dadosfera.
+
+### Scripts
+Todos os comandos SQL estão no arquivo:  
+```
+
+scripts/criacao_banco.sql
+
+```
+
+### Comandos incluídos
+- Criar banco de dados: `igor_gustavo_vaga`
+- Criar tabela fictícia: `TB_igor_gustavo_vaga` com os campos:
+  - `id` (INT, chave primária)
+  - `nome_cliente` (VARCHAR)
+  - `data_venda` (DATE)
+  - `produto` (VARCHAR)
+  - `quantidade` (INT)
+  - `valor_total` (DECIMAL)
+- Inserir dados de teste
+- Validar tabela com `SELECT * FROM TB_igor_gustavo_vaga;`
+
+### Estrutura do repositório
+```
+
+IGOR_GUSTAVO_DDF_SUPORTE_2026_03/
+└── scripts/
+└── criacao_banco.sql
+
+```
+
+---
+
+## **Step 3 – Configuração e Conexão de VPN**
+
+### Objetivo
+Configurar a conexão VPN na rede da VM/Linux para acessar o banco de dados interno e integrar com a Dadosfera.
+
+### Scripts
+Arquivo principal:  
+```
+
+scripts/vpn/config_vpn.sh
+
+```
+
+Conteúdo do script:
+```bash
+#!/bin/bash
+# Atualiza pacotes
+sudo apt update && sudo apt upgrade -y
+
+# Instala OpenVPN
+sudo apt install openvpn -y
+
+# Conecta à VPN usando arquivo .ovpn (substitua pelo caminho correto)
+sudo openvpn --config CAMINHO/ARQUIVO.ovpn
+````
+
+### Checklist de validação da VPN
+
+Após conectar:
+
+1. **Ping no host do banco de dados**
+
+```bash
+ping <IP_DO_BANCO>
+```
+
+2. **Teste de porta**
+
+```bash
+telnet <IP_DO_BANCO> 3306
+```
+
+3. **Rota e DNS**
+
+```bash
+traceroute <IP_DO_BANCO>
+nslookup dadosfera.ai
+```
+
+4. **Salvar logs da conexão**
+
+```bash
+sudo openvpn --config CAMINHO/ARQUIVO.ovpn --log ../../docs/logs_vpn.txt
+```
+
+### Estrutura do repositório
+
+```
+IGOR_GUSTAVO_DDF_SUPORTE_2026_03/
+├── scripts/
+│   ├── criacao_banco.sql
+│   └── vpn/
+│       ├── config_vpn.sh
+│       └── README.md
+└── docs/
+    └── logs_vpn.txt
+```
+
 ``
-igor_santana_DDF_SUPORTE_2026_03
-
-README.md
-prints/
-    ping.png
-    tracert.png
-    nslookup.png
-    banco.png
-    vpn.png
-    pipeline.png
-
-# Desafio Técnico – Dadosfera Suporte
-
-## Candidato
-
-Igor Gustavo Santana
-
-## Repositório
-
-# Step 1 – Troubleshooting
-
-### Chamado do cliente
-
-Cliente relatou erro durante a importação de dados de uma planilha do Google Sheets para a plataforma.
-
-### Diagnóstico
-
-Ao analisar o pipeline de coleta foi identificado que o erro pode ocorrer por:
-
-* Permissão incorreta da planilha
-* Tipos de dados inconsistentes
-* Linhas vazias ou cabeçalhos duplicados
-* Limite de requisições da API do Google
-
-### Sugestão de correção no Dataset
-
-Alterar a configuração do dataset para:
-
-* Garantir que a planilha esteja com acesso **compartilhado ou público**
-* Garantir que a **primeira linha contenha apenas os nomes das colunas**
-* Remover linhas vazias
-* Padronizar tipos de dados (ex: texto ou número)
-
-### Boas práticas ao carregar Google Sheets
-
-1. Validar estrutura da planilha
-2. Evitar células mescladas
-3. Garantir que os dados estejam normalizados
-4. Monitorar logs do pipeline
-
-### Coleta de logs
-
-Os logs podem ser obtidos pelo painel da plataforma seguindo a documentação oficial da Dadosfera.
-
----
-
-## Step 2 – Criação do Banco de Dados
-
-O banco de dados e a tabela fictícia foram criados no arquivo:
-
-`scripts/criacao_banco.sql`
-
-Este script cria:
-- Banco de dados: `igor_gustavo_vaga`
-- Tabela: `TB_igor_gustavo_vaga` com campos de cliente, produto, quantidade e valor total
-- Dados de teste inseridos para validação
-
-# Step 3 – Configuração da VPN
-
-Para permitir comunicação segura foi utilizada a VPN.
-
-Ferramenta utilizada:
-
-OpenVPN
-
-### Instalação
-
-```bash
-sudo apt update
-sudo apt install openvpn
-```
-
-### Conexão
-
-```bash
-sudo openvpn --config cliente.ovpn
-```
-
-Após a conexão foi possível acessar a rede privada da plataforma.
-
----
 
 # Step 4 – Conexão com a Dadosfera
 
