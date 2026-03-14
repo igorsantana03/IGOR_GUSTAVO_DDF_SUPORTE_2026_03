@@ -109,42 +109,40 @@ VPN conectada com sucesso (simulação).
 
 # Step 4 – Conexão com a Dadosfera (Simulada)
 
-Este passo simula a conexão da tabela `TB_igor_santana` com a plataforma Dadosfera e a execução de uma pipeline, permitindo gerar evidências mesmo sem a VPN real.
+Este passo simula a conexão da tabela `TB_igor_santana` com a plataforma Dadosfera e a execução de uma pipeline.  
+Permite gerar evidências mesmo sem a VPN real.
 
 ---
 
 ## Estrutura de arquivos
-
-
+pipeline/
+├── conexao_dadosfera.ps1 # Script simulado da pipeline
+├── logs_pipeline.txt # Logs gerados pela execução do script
+└── README.md # Explicação do Step 4
 ---
 
-## Conteúdo do script `conexao_dadosfera.ps1`
+## Como executar
 
-O script realiza os seguintes passos:
-
-1. Simula a conexão à tabela `TB_igor_santana`.
-2. Valida a “conexão” (simulada) com sucesso.
-3. Simula a execução da pipeline.
-4. Gera logs em `logs_pipeline.txt`.
-5. Mostra os logs no terminal.
-
-**Trecho do script:**
+1. Abra o **PowerShell**.
+2. Navegue até a pasta `pipeline`:
 
 ``powershell
-Write-Output "Conectando à tabela TB_igor_santana..."
-Start-Sleep -Seconds 1
+cd C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\pipeline
+Execute o script:
 
-$connectionStatus = "Conexão com TB_igor_santana validada com sucesso"
-Write-Output $connectionStatus
+.\conexao_dadosfera.ps1
+Saída esperada
+Conectando à tabela TB_igor_santana...
+Conexão com TB_igor_santana validada com sucesso
+Executando pipeline...
+Conexão com TB_igor_santana validada com sucesso
+Pipeline executada com sucesso
+Logs gerados
 
-Write-Output "Executando pipeline..."
-Start-Sleep -Seconds 1
+O arquivo logs_pipeline.txt conterá:
 
-$logPath = "C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\pipeline\logs_pipeline.txt"
-$connectionStatus | Out-File -FilePath $logPath
-"Pipeline executada com sucesso" | Out-File -FilePath $logPath -Append
-
-Get-Content $logPath
+Conexão com TB_igor_santana validada com sucesso
+Pipeline executada com sucesso.
 
 # Step 5 – Catálogo de Dados
 
