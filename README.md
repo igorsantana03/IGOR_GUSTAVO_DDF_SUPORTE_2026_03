@@ -386,8 +386,7 @@ nslookup
 
 Link do vídeo demonstrando a execução do ambiente e troubleshooting:
 
-((https://drive.google.com/file/d/1YZ0VDNUkzx7X8CGUtYGhqva0mKtiS0wS/view?usp=drive_link))
-
+(https://drive.google.com/file/d/1_CNyTAJ9kI2Gdb1T8vZ2WVbMFwpVyMZR/view?usp=drive_link)
 --
 
 # BONUS – Boas práticas de suporte
