@@ -1,0 +1,121 @@
+# Step 8 – Bônus: Processos Internos e Uso de IA no Suporte
+
+Este step apresenta algumas propostas de melhoria para os processos internos de suporte da plataforma Dadosfera, além de um exemplo de como ferramentas de Inteligência Artificial podem auxiliar no atendimento ao cliente.
+
+O objetivo é demonstrar como processos bem definidos e automação podem melhorar a experiência do usuário e reduzir o tempo de resolução de problemas.
+
+---
+
+# 1. Implementação de SSO (Single Sign-On)
+
+Uma das melhorias possíveis na plataforma é a implementação de um sistema de autenticação centralizado utilizando **SSO (Single Sign-On)**.
+
+O SSO permite que os usuários acessem diferentes sistemas utilizando apenas um único login, aumentando a segurança e simplificando o gerenciamento de identidades.
+
+## Benefícios
+
+- Melhora da experiência do usuário
+- Redução de problemas de autenticação
+- Maior controle de acesso
+- Centralização da gestão de usuários
+
+## Exemplo de provedores de identidade
+
+Alguns provedores que podem ser integrados com SSO:
+
+- Azure Active Directory
+- Okta
+- Google Identity
+- Auth0
+
+---
+
+# 2. Processo de Implementação
+
+A implementação de SSO deve seguir algumas etapas para garantir uma transição segura e organizada.
+
+## Etapas sugeridas
+
+1. Planejamento da mudança
+2. Identificação dos sistemas impactados
+3. Comunicação com os clientes
+4. Testes de autenticação
+5. Migração gradual dos usuários
+6. Monitoramento após implementação
+
+---
+
+# 3. Impacto no Suporte
+
+Durante a implementação de novas funcionalidades como o SSO, o time de suporte pode receber novos tipos de chamados relacionados a:
+
+- falha de autenticação
+- permissões incorretas
+- problemas de integração com o provedor de identidade
+- erros de configuração de usuários
+
+Por esse motivo é importante que a equipe de suporte tenha **documentação clara e procedimentos bem definidos** para lidar com esses cenários.
+
+---
+
+# 4. Uso de Inteligência Artificial no Suporte
+
+Ferramentas de Inteligência Artificial podem ser utilizadas para melhorar o atendimento ao cliente e reduzir o volume de tickets repetitivos.
+
+Uma das aplicações mais comuns é o uso de **chatbots inteligentes integrados à base de conhecimento da empresa**.
+
+---
+
+# 5. Fluxo de Atendimento com IA
+
+Um fluxo possível para atendimento automatizado seria:
+
+Usuário → Chatbot de IA → Base de conhecimento → Resposta automática → Escalação para suporte humano
+
+### Funcionamento
+
+1. O usuário envia uma pergunta no chat de suporte.
+2. A IA analisa a pergunta utilizando processamento de linguagem natural.
+3. A IA consulta a base de conhecimento e documentação da plataforma.
+4. A resposta é enviada automaticamente ao usuário.
+5. Caso o problema não seja resolvido, o ticket é encaminhado para um analista de suporte.
+
+---
+
+# 6. Exemplo de Pergunta e Resposta
+
+### Pergunta do usuário
+
+"Estou com erro ao conectar meu banco de dados à plataforma. O que posso verificar?"
+
+### Resposta sugerida pela IA
+
+Algumas verificações importantes incluem:
+
+- verificar se a VPN está conectada corretamente
+- validar as credenciais do banco de dados
+- conferir se a porta do banco está liberada no firewall
+- confirmar se o host do banco está acessível na rede
+- verificar os logs da pipeline na plataforma
+
+Caso o problema persista, recomenda-se abrir um ticket de suporte incluindo os logs do erro.
+
+---
+
+# 7. Benefícios da Automação no Suporte
+
+A adoção de IA no suporte pode trazer diversos benefícios:
+
+- redução do tempo de resposta
+- atendimento 24 horas
+- diminuição do volume de tickets repetitivos
+- melhoria na experiência do usuário
+- maior produtividade da equipe de suporte
+
+---
+
+# Conclusão
+
+A melhoria dos processos internos, combinada com o uso de ferramentas de automação e inteligência artificial, pode aumentar significativamente a eficiência do suporte técnico.
+
+Essas práticas ajudam a reduzir o tempo de resolução de incidentes e oferecem uma melhor experiência para os usuários da plataforma Dadosfera.
