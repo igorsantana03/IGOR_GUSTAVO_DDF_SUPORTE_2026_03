@@ -1,10 +1,14 @@
 #!/bin/bash
-# Atualizar pacotes do sistema
-sudo apt update && sudo apt upgrade -y
+# Script de VPN – Simulação
+echo "Atualizando pacotes..."
+sudo apt update -y
 
-# Instalar OpenVPN
+echo "Instalando OpenVPN..."
 sudo apt install openvpn -y
 
-# Conectar à VPN usando arquivo .ovpn
-# Substitua CAMINHO/ARQUIVO.ovpn pelo caminho real
-sudo openvpn --config CAMINHO/ARQUIVO.ovpn
+echo "Simulando conexão VPN..."
+echo "Initialization Sequence Completed" > ~/vpn_files/logs_vpn.txt
+echo "VPN conectada com sucesso (simulação)." >> ~/vpn_files/logs_vpn.txt
+
+# Mostrar logs no terminal
+cat ~/vpn_files/logs_vpn.txt
