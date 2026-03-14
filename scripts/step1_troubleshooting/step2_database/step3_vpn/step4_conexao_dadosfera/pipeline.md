@@ -1,19 +1,19 @@
-# Conexão com a plataforma Dadosfera
+# Script de conexão com a Dadosfera – Simulação
 
-Após estabelecer a conexão VPN, foi realizada a conexão da base PostgreSQL com a plataforma Dadosfera.
+Write-Output "Conectando à tabela TB_igor_santana..."
+Start-Sleep -Seconds 1
 
-## Configuração da fonte de dados
+$connectionStatus = "Conexão com TB_igor_santana validada com sucesso"
+Write-Output $connectionStatus
 
-Tipo de conexão: PostgreSQL
+Write-Output "Executando pipeline..."
+Start-Sleep -Seconds 1
 
-Host: IP do servidor  
-Porta: 5432  
-Database: igor_suporte  
+$logPath = "C:\Users\igors\IGOR_GUSTAVO_DDF_SUPORTE_2026_03\scripts\pipeline\logs_pipeline.txt"
+$connectionStatus | Out-File -FilePath $logPath
+"Pipeline executada com sucesso" | Out-File -FilePath $logPath -Append
 
-## Pipeline criado
-
-Source: PostgreSQL  
-Tabela: TB_igor_suporte  
-Destino: Plataforma Dadosfera
-
-Após a configuração, o pipeline foi executado com sucesso e os dados foram disponibilizados na plataforma.
+# Mostrar logs no terminal
+Get-Content $logPath
+Conexão com TB_igor_santana validada com sucesso
+Pipeline executada com sucesso
